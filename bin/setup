@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+echo -e "\e[95m1. SETUP ENVIRONMENT"
+npm install
+echo -e "\e[92m=>Install package success."
+echo -e "\e[95m2. CHMOD FOLDER"
+chmod +x bin/
+if [[ $EUID -ne 0 ]]
+then
+   sudo npm link
+else
+   npm link
+fi
+npm link
+echo -e "\e[92m=> Chmod success."
+echo -e "\e[95m2. RUN TEST"
+npm run test
+echo -e "\e[92m=> Run test done."
+echo -e "\e[34m================= SETUP SUCCESS ================"
+
+echo "Menu Command:"
+echo "1. Create Parking Slot: create_parking_lot {number}"
+echo "2. Park a car: park {car_number}"
+echo "3. Remove (Unpark) car from: leave {car_number} {hours}"
+echo "4. Print status of parking slot : status"
+echo "5. Test By File: ./bin/parking_lot file_inputs.txt"
+
+

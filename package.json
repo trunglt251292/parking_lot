@@ -1,0 +1,26 @@
+{
+  "name": "parking_lot",
+  "version": "1.0.0",
+  "description": "Parking Lot",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "park": "./command/park.js",
+    "leave": "./command/leave.js",
+    "create_parking_lot": "./command/create_parking_lot.js",
+    "status": "./command/status.js",
+    "clear_data": "./command/clear_data.js"
+  },
+  "scripts": {
+    "test": "mocha \"__test__/*.spec.js\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@k-will/core-helper": "^1.0.4",
+    "colors": "^1.4.0",
+    "commander": "^4.1.1",
+    "data-store": "^4.0.3",
+    "execa": "^4.0.0"
+  }
+}

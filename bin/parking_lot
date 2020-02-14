@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+'use strict';
+const program = require('commander');
+const {main} = require('../action');
+
+program
+    .arguments('<path_file>')
+    .action(main);
+
+program.parse(process.argv);
+
